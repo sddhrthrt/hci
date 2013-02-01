@@ -1,0 +1,145 @@
+.phone {
+	background: url(nokia_n79.jpg) no-repeat;
+	height: 688px;
+	width: 357px; 
+	margin: -20px auto;
+	position: relative;
+}
+.screen {
+	position: absolute;
+	width: 222px;
+	height: 295px;
+	background: #FFD300;
+	left: 71px;
+	top: 98px;
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+}
+.buttons {
+	position: absolute;
+	width: 242px;
+	height: 240px;
+	left: 61px;
+	top: 440px;
+	background: black;
+	opacity: 0.0;
+}
+.numkeys{
+	display: inline-block;
+	width: 80px;	
+	height: 35px;
+	background: red;
+	margin-right: -5px;
+	margin-bottom: -5px;
+}
+.header {
+	padding: 5px;
+	color: black;
+	font-family: Tahoma, Helvetica, Arial;
+	text-align: center;
+	background: #BFA730;
+}
+.area {
+	height: 240px;
+}	
+.btn {
+	width: 100px;
+	background: #A68900;
+	color: black;
+	text-align: center;
+	  font-family: Tahoma, Helvetica, Arial;
+	padding: 1.5px;	
+}	
+.pull-right {
+	float: right;
+}
+.player {
+	width: 222px;
+	height: 240px;
+	background-image: url(vis.gif);
+}
+#title{
+	padding-left: 20px;
+}
+.title {
+	color: white;
+	text-align: center;
+	font-family: Tahoma, Helvetica, Arial;
+	font-size: 14px;
+}
+.controls {
+	color: white;
+	text-align: center;
+	font-weight: bolder;
+	position: relative;
+	top: 178px;
+}
+.ctrl {
+	padding-left: 10px;
+	padding-right: 8px;
+}
+.mode {
+	position: absolute;
+	display: block;
+	color: white;
+	top: 245px;
+	left: 200px;
+}
+.side{
+	width: 70px;
+	height: 42px;
+	background: #A68900;
+}
+.updown{
+	width: 60px;
+	height: 25px;
+	background: #A60000;
+	position: absolute;
+	left: 90px;
+}
+.leftright{
+	width: 25px;
+	height: 50px;
+	background: #430000;
+	position: absolute;
+	top: 16px;
+}
+.center{
+	width: 35px;
+	height: 35px;
+	left: 105px;
+	margin-top: 10px;
+	background: #436600;
+	position: absolute;
+	top: 16px;
+}
+.left{
+	left: 80px;
+}
+.right{
+	left: 140px;
+}
+.menu{
+	background: #00B64F;
+	height: 240px;
+	font-family: Tahoma, Helvetica, Arial;
+}
+.menuitem{
+	height: 25px;
+}
+.active{
+	background: #A5EF00;
+}
+.menu-head{
+	background: #83AB00;	
+}
+.hidden{
+	visibility: hidden;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+}
+.volume{
+	color: white;
+	font-size: 10px;
+}
