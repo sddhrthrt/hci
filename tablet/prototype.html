@@ -3,16 +3,33 @@
      
     <head>
 
-    <script src="zepto.min.js"></script>
-    <script src="control.js"></script>
-    <script src="scratchpad.js"></script>
-	
     <link href="style.css" rel="stylesheet">
+	<link href="css/ui-lightness/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.9.0.js"></script>
+	<script src="js/jquery-ui-1.10.0.custom.js"></script>
+    <script src="scratchpad.js"></script>
+    <script>
+        $(function(){
+        });
+    </script>
+	
 
     </head>
 
 <body>
 <div class="phone">
+    <div class="screen">
+        <div class="title">
+            imageMagique
+        </div>
+        <div class="gallery" id="sortable">
+            <div class="thumbnail" id="pic0"><img class="thumb-img" src="pics/pic0.jpg"></div>
+            <div class="thumbnail" id="pic1"><img class="thumb-img" src="pics/pic1.jpg"></div>
+            <div class="thumbnail" id="pic2"><img class="thumb-img" src="pics/pic2.jpg"></div>
+            <div class="thumbnail" id="pic3"><img class="thumb-img" src="pics/pic3.jpg"></div>
+            <div class="thumbnail" id="pic4"><img class="thumb-img" src="pics/pic4.jpg"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

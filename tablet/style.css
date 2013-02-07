@@ -6,8 +6,31 @@
 	position: relative;
 	font-family: Tahoma, Helvetica, Arial;
 }
-.icon{
-	
-}
 
+.screen{
+    position: absolute;
+    top: 78px;
+    left: 66px;
+    width: 724px;
+    height: 450px;
+    background-color: #444444;
+}
+.title{
+    text-align: center;
+    color: #b1b1b1;
+}
+.thumbnail{
+    width: 150px;
+    border: 1px solid #303030;
+    display: inline-block;
+}
+.thumb-img{
+    width: 130px;
+    padding: 10px;
+}
+.gallery{
+    padding: 15px;
+    margin: 10px;
+    background: #111111;
+}
 
