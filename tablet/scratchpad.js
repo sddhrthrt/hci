@@ -10,5 +10,8 @@
 $(function(){
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
+    $(".thumbnail").each(function(index){
+        $(this).append('<span class="ui-icon ui-icon-pencil pull-right"></span>');
+    });
 });
 
