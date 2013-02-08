@@ -24,6 +24,7 @@
     width: 150px;
     border: 1px solid #303030;
     display: inline-block;
+	margin: 2px;
 }
 .thumb-img{
     width: 130px;
@@ -37,3 +38,58 @@
 .pull-right{
     float: right;
 }
+.editor{
+	margin: 10px;
+	width: 684px;
+	margin-left: 10px;
+	background: #ffffff;
+}
+.editable {
+	width: 664px;
+	padding: 10px;
+	height: auto;
+}
+.pulldown{
+	position: absolute; 
+	right: 35px;
+	top: 30px;
+	width: 80px;
+	height: 60px;
+	background: #111111;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 2px solid #888888;
+	border-top: none;
+	text-align: center;
+	opacity: 0.8;
+}
+.pulldownmenu{
+	position: absolute; 
+	right: 35px;
+	top: 30px;
+	width: 190px;
+	background: #111111;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border: 2px solid #888888;
+	border-top: none;
+	text-align: center;
+	opacity: 0.8;
+}
+#edit-icon{
+	font-size: 30px;
+	color: white;
+	display: block;
+	margin-top: 15px;
+}
+.menuitems{
+	margin-top: -35px;
+	color: #aaaaaa;
+	list-style: none;
+}
+.menuitem{
+	padding: 5px;
+	border-bottom: 1px solid #555555;
+}
+
+
