@@ -83,6 +83,10 @@
 	margin-top: 15px;
 }
 .menuitems{
+<<<<<<< HEAD
+=======
+	margin-top: -35px;
+>>>>>>> 01b3dede3b81e19b4eb1c5c327ea0ea56d424e41
 	color: #aaaaaa;
 	list-style: none;
 }

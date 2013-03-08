@@ -13,6 +13,7 @@ $(function(){
     $(".thumbnail").each(function(index){
         $(this).append('<span class="edit ui-icon ui-icon-pencil pull-right"></span>');
     });
+<<<<<<< HEAD
     function showMenu($this){
         $("#edit-icon").animate({opacity: 0.2}, 10);
         $(".pulldown").remove();
@@ -63,6 +64,41 @@ $(function(){
 		var src = $item.attr("href");
 		$("<img>").addClass("editable").attr("src", src).appendTo(".editor");
         showMenuButton();
+=======
+	function edit($item){
+		$("<div class='editor'></div>").hide().appendTo($(".screen")).show("400");
+		$(".gallery").hide("400");
+		var src = $item.attr("href");
+		$("<img>").addClass("editable").attr("src", src).appendTo(".editor");
+		setTimeout(function(){
+			$("<div>").addClass("pulldown").appendTo(".editor").hide().fadeIn(400);
+			$("<i class='icon-edit' id='edit-icon'></i>").appendTo(".pulldown");
+
+			var items = ["Brightness", "Saturation",
+						"Exposure", "Sepia",
+						"Noise", "Contrast", 
+						"Vibrance", "Hue",
+						"Gamma", "Clip"];
+			var list = $("<div>").addClass("menuitems");
+			for(var item in items){
+				list.append($("<div class='menuitem'>"+items[item]+"</div>").attr("id", items[item]));
+			}
+			list.appendTo('body');
+			var menuheight= list.height();
+
+			$(".pulldown").click(function(event){
+				$(this).switchClass("pulldown", "pulldownmenu",{ height: menuheight+40}, 800);
+				$(this).animate({ height: menuheight+40});
+				$("#edit-icon").animate({opacity: 0.2}, 1000);
+
+				setTimeout(function(){
+					list.appendTo(".pulldownmenu");
+
+				}, 800);
+			});
+			
+		}, 400);
+>>>>>>> 01b3dede3b81e19b4eb1c5c327ea0ea56d424e41
 	}
 	$(".thumbnail").click(function(event){
 		var $item = $(this),
