@@ -1,0 +1,30 @@
+{% include 'head.html' %}
+<div class="container">
+    <div class="sixteen columns">
+        {% include 'head_menu.html' %}
+        <div class="row mails ">
+            <div class="two columns boxed">
+                {% for user in users %}
+                <div class="user">
+                    <a href="/u/{{user}}">{{user}}</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="thirteen columns boxed">
+                {% for mail in mails %}
+                <div class="mail">
+                    <div class="mail-buttons">
+                        <span class="mail-button timer" >{{mail.time}}</span>
+                        <span class="mail-button hint" data-hint="Stick on top"><i class="icon-magnet"></i></span>
+                        <span class="mail-button hint" data-hint="Open conversation"><i class="icon-comments"></i></span>
+                        <span class="mail-button hint" data-hint="Reply"><i class="icon-reply"></i></span>
+                        <span class="mail-button hint" data-hint="Delete"><i class="icon-trash"></i></span>
+                    </div>
+                    {{mail.sub}}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div><!-- container -->
+{% include 'foot.html' %}

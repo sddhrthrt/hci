@@ -1,0 +1,31 @@
+.subhead{
+    font-family: serif;
+}
+.top-menu{
+    padding: 20px;
+}
+.top-menu-item{
+    padding: 10px;
+    size: 18px;
+}
+.boxed {
+    border: solid 1px black;
+}
+.mail, .user{
+    padding: 5px;
+    margin-bottom: 3px;
+    background: #cccccc;
+}
+.mail-buttons{
+    float: right;
+    font-size: 12px;
+}
+.mail-button{
+    padding-right: 8px;
+}
+.timer{
+    width: 10px;
+}
+/*i:hover{
+    font-size: 16px;
+}*/
