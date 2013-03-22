@@ -10,17 +10,19 @@
                 </div>
                 {% endfor %}
             </div>
-            <div class="thirteen columns boxed">
+            <div class="twelve columns boxed" id="mailbox">
                 {% for mail in mails %}
-                <div class="mail">
-                    <div class="mail-buttons">
-                        <span class="mail-button timer" >{{mail.time}}</span>
-                        <span class="mail-button hint" data-hint="Stick on top"><i class="icon-magnet"></i></span>
-                        <span class="mail-button hint" data-hint="Open conversation"><i class="icon-comments"></i></span>
-                        <span class="mail-button hint" data-hint="Reply"><i class="icon-reply"></i></span>
-                        <span class="mail-button hint" data-hint="Delete"><i class="icon-trash"></i></span>
+                <div class="mail-back">
+                    <div class="mail" id={{mail.id}}>
+                        <div class="mail-buttons">
+                            <span class="mail-button timer" >{{mail.time}}</span>
+                            <span class="mail-button hint top" data-hint="Stick on top"><i class="icon-magnet"></i></span>
+                            <span class="mail-button hint conversation" data-hint="Open conversation"><i class="icon-comments"></i></span>
+                            <span class="mail-button hint reply" data-hint="Reply"><i class="icon-reply"></i></span>
+                            <span class="mail-button hint delete" data-hint="Delete"><i class="icon-trash"></i></span>
+                        </div>
+                        <b>{{mail.frm}}:</b> {{mail.sub}}
                     </div>
-                    {{mail.sub}}
                 </div>
                 {% endfor %}
             </div>
