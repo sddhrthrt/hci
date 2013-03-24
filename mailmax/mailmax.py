@@ -2,7 +2,7 @@ from flask import Flask, render_template, _app_ctx_stack, redirect
 from sqlite3 import dbapi2 as sqlite3
 import json
 
-DATABASE = 'mailbox.db'
+DATABASE = '/var/www/hci/mailmax/mailbox.db'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -92,4 +92,4 @@ def conv(id=None):
 
 if __name__== '__main__':
     app.debug=True
-    app.run()
+    app.run('0.0.0.0')
