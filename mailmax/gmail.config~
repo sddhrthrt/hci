@@ -1,0 +1,10 @@
+[server]
+hostname = imap.gmail.com
+port = 993
+
+[account]
+username = sddhrthrt
+password = fakeroot@gmail
+inbox = [Gmail]/All Mail
+sent = [Gmail]/Sent Mail
+otherguy = P G Mohanan 
