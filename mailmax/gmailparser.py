@@ -5,8 +5,15 @@ import re
 import traceback
 from pprint import pprint
 import email
+from pymongo import *
+
 
 verbose = True
+
+def get_connection():
+    client = MongoClient('localhost', 27017)
+    db = client['mailbox']
+    return db
 
 def get_configuration():
     # Read the config file
@@ -98,6 +105,29 @@ def print_mail(mail_data):
                 if part.get_content_type()=="text/plain":
                     print part.get_payload()
 
+def save_mail(mail_data, mailbox):
+    db = get_connection()
+    collection = db[mailbox]
+    for part in mail_data:
+        if isinstance(part, tuple):
+            msg = email.message_from_string(part[1])
+            headers = ['to', 'from', 'subject', 'date']
+            mail = {}
+            for header in headers:
+                mail[header] = msg[header]
+            text = ""
+            for part in msg.walk():
+                if part.get_content_type()=="text/plain":
+                    text += part.get_payload()
+            mail['text'] = text
+            collection.insert(mail)
+
+def store_mails(mail_ids, box, c):
+    for mail_id in mail_ids:
+        mail_data = fetch_mail(mail_id, c)
+        save_mail(mail_data, box)
+        #print_mail(mail_data)
+
 if __name__ == '__main__':
     config = get_configuration()
     c = open_connection(config)
@@ -107,16 +137,18 @@ if __name__ == '__main__':
         sent = config.get('account', 'sent')
         person = config.get('account', 'otherguy')
 
-        #mails = get_mails_list(inbox, '(FROM "%s")'%person, c)
-        mails = get_mails_list(sent, '(TO "%s")'%person, c)
-
+        mails = get_mails_list(inbox, '(FROM "%s")'%person, c)
         if mails:
-            for mail_id in mails[0].split()[-5:]:
-                mail_data = fetch_mail(mail_id, c)
-                save_mail(mail_data)
-                #print_mail(mail_data)
-        #else:
-            #print "no mails found."
+            store_mails(mails[0].split(), 'inbox', c)
+        else:
+            if verbose: print "no inbox mails found."
+
+        mails = get_mails_list(sent, '(TO "%s")'%person, c)
+        if mails:
+            store_mails(mails[0].split(), 'sent', c)
+        else:
+            if verbose: print "no sent mails found."
+
     except Exception as e:
         print e
         traceback.print_exc()
